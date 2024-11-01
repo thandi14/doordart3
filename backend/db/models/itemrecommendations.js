@@ -19,9 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     recommendation: DataTypes.STRING,
     cals: DataTypes.STRING,
     price: DataTypes.DECIMAL,
-    selected: DataTypes.BOOLEAN,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    selected: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'ItemRecommendations',

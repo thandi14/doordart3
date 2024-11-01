@@ -16,9 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Searches.init({
     restaurantId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
-    query: DataTypes.TEXT,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    query: DataTypes.TEXT
   }, {
     sequelize,
     modelName: 'Searches',
