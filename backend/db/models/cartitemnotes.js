@@ -10,15 +10,24 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      CartItemNotes.belongsTo(
+        models.ItemSelection,
+          { foreignKey: 'selectionId' }
+      );
+      CartItemNotes.belongsTo(
+        models.ItemRecommendation,
+          { foreignKey: 'recommendationId' }
+      );
+      CartItemNotes.belongsTo(
+        models.CartItem,
+          { foreignKey: 'itemId' }
+      );
     }
   }
   CartItemNotes.init({
     itemId: DataTypes.INTEGER,
     selectionId: DataTypes.INTEGER,
-    recommendationId: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    recommendationId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'CartItemNotes',
